@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    volumes:
+      - ./front:/src
+    working_dir: /src
+    command: yarn dev
+    ports:
+      - "5173:5173"
